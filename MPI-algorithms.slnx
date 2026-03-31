@@ -1,0 +1,9 @@
+<Solution>
+  <Configurations>
+    <Platform Name="Any CPU" />
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Project Path="MPI-algorithms/MPI-algorithms.vcxproj" Id="3d4d469a-cace-4917-95c2-0e7764c0baa2" />
+  <Project Path="MPI-interface/MPI-interface.csproj" Id="2d7bbca4-0353-40e0-a576-5505b468f43e" />
+</Solution>
