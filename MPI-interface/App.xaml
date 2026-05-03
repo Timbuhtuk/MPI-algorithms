@@ -6,7 +6,7 @@
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="/MPI-interface;component/DesignSystem.xaml"/>
+                <ResourceDictionary Source="/MPI-interface;component/Design/MergedDesign.xaml"/>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Application.Resources>

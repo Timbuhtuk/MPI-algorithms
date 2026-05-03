@@ -1,10 +1,12 @@
-<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
-<Style x:Key="TextBox.Sonar" TargetType="TextBox">
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <!-- Минимальный шаблон: без триггеров; отступ из Foundation через DynamicResource. -->
+    <Style x:Key="TextBox.Sonar" TargetType="TextBox">
         <Setter Property="Background" Value="{DynamicResource Brush.Input.Background}" />
         <Setter Property="Foreground" Value="{DynamicResource Brush.Input.Foreground}" />
         <Setter Property="BorderBrush" Value="{DynamicResource Brush.Input.Border}" />
         <Setter Property="BorderThickness" Value="1" />
-        <Setter Property="Padding" Value="16 10 16 10" />
+        <Setter Property="Padding" Value="{DynamicResource Padding.Input}" />
         <Setter Property="FontFamily" Value="{DynamicResource FontFamily.Base}" />
         <Setter Property="FontSize" Value="{DynamicResource FontSize.Body}" />
         <Setter Property="MinHeight" Value="52" />
@@ -12,25 +14,16 @@
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="TextBox">
-                    <Border x:Name="Bd"
-                            Background="{TemplateBinding Background}"
-                            BorderBrush="{TemplateBinding BorderBrush}"
-                            BorderThickness="{TemplateBinding BorderThickness}"
-                            Padding="{TemplateBinding Padding}"
+                    <Border Background="{DynamicResource Brush.Input.Background}"
+                            BorderBrush="{DynamicResource Brush.Input.Border}"
+                            BorderThickness="1"
+                            Padding="{DynamicResource Padding.Input}"
                             CornerRadius="{DynamicResource Radius.Medium}">
                         <ScrollViewer x:Name="PART_ContentHost"
+                                      Focusable="False"
                                       Margin="0"
-                                      VerticalAlignment="Center"/>
+                                      VerticalAlignment="Center" />
                     </Border>
-                    <ControlTemplate.Triggers>
-                        <Trigger Property="IsKeyboardFocused" Value="True">
-                            <Setter TargetName="Bd" Property="BorderBrush" Value="{DynamicResource Brush.Input.BorderFocus}" />
-                        </Trigger>
-                        <Trigger Property="IsEnabled" Value="False">
-                            <Setter TargetName="Bd" Property="Background" Value="{DynamicResource Brush.Input.DisabledBackground}" />
-                            <Setter Property="Foreground" Value="{DynamicResource Brush.Input.DisabledForeground}" />
-                        </Trigger>
-                    </ControlTemplate.Triggers>
                 </ControlTemplate>
             </Setter.Value>
         </Setter>

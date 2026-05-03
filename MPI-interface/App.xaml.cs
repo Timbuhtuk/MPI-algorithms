@@ -1,6 +1,4 @@
 using System;
-using System.Configuration;
-using System.Data;
 using System.IO;
 using System.Text;
 using System.Threading.Tasks;
@@ -16,8 +14,35 @@ namespace MPI_interface
     {
         protected override void OnStartup(StartupEventArgs e)
         {
+            EnsureDesignResourcesPresent();
             InstallCrashHandlers();
             base.OnStartup(e);
+        }
+
+        /// <summary>
+        /// После загрузки App.xaml все merged dictionaries уже смержены — проверяем критические ключи до показа окон.
+        /// </summary>
+        private void EnsureDesignResourcesPresent()
+        {
+            string[] required =
+            [
+                "Padding.Input",
+                "Brush.Background.App",
+                "Brush.Input.Border",
+                "Brush.Input.Foreground",
+                "Radius.Medium",
+                "Text.Body",
+                "Button.Accent",
+                "TextBox.Sonar"
+            ];
+
+            foreach (string key in required)
+            {
+                object? found = TryFindResource(key);
+                if (found is null)
+                    throw new InvalidOperationException(
+                        $"Design resource '{key}' is missing. Merge order in Design/MergedDesign.xaml: Foundation → Theme → styles.");
+            }
         }
 
         private void InstallCrashHandlers()

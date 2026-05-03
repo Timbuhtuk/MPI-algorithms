@@ -32,4 +32,13 @@
         <Setter Property="FontSize" Value="{DynamicResource FontSize.Caption}" />
         <Setter Property="Foreground" Value="{DynamicResource Brush.Text.Subtitle}" />
     </Style>
+
+    <Style x:Key="Text.ResultPrimary" TargetType="TextBlock" BasedOn="{StaticResource Text.Body}">
+        <Setter Property="FontSize" Value="{DynamicResource FontSize.BodyMedium}" />
+        <Setter Property="FontWeight" Value="SemiBold" />
+        <Setter Property="Foreground" Value="{DynamicResource Brush.Text.Primary}" />
+    </Style>
+    <Style x:Key="Text.ResultSecondary" TargetType="TextBlock" BasedOn="{StaticResource Text.Caption}">
+        <Setter Property="Foreground" Value="{DynamicResource Brush.Text.Subtle}" />
+    </Style>
 </ResourceDictionary>

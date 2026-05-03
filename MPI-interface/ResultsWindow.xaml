@@ -6,8 +6,8 @@
         xmlns:ScottPlot="clr-namespace:ScottPlot.WPF;assembly=ScottPlot.WPF"
         mc:Ignorable="d"
         Title="Benchmark Results"
-        Height="720"
-        Width="1150"
+        Height="620"
+        Width="960"
         WindowStartupLocation="CenterOwner"
         Background="{DynamicResource Brush.Background.App}">
 
@@ -24,7 +24,7 @@
             <StackPanel>
                 <TextBlock Text="Benchmark Results"
                            Style="{StaticResource Text.PageTitle}"/>
-                <TextBlock Text="Execution time and managed memory overview"
+                <TextBlock Text="Execution time overview"
                            Style="{StaticResource Text.BodySecondary}"
                            Margin="0,6,0,0"/>
             </StackPanel>
@@ -37,14 +37,8 @@
                 <ColumnDefinition Width="3*" />
             </Grid.ColumnDefinitions>
 
-            <Grid.RowDefinitions>
-                <RowDefinition Height="*" />
-                <RowDefinition Height="*" />
-            </Grid.RowDefinitions>
-
             <!-- Speed leaderboard -->
-            <GroupBox Grid.Row="0"
-                      Grid.Column="0"
+            <GroupBox Grid.Column="0"
                       Header="Speed Leaderboard"
                       Margin="6">
                 <ListBox x:Name="TimeResultsListBox"
@@ -58,13 +52,9 @@
                                     <ColumnDefinition Width="Auto" />
                                 </Grid.ColumnDefinitions>
 
-                                <StackPanel Grid.Column="0">
-                                    <TextBlock Text="{Binding MethodName}"
-                                               Style="{StaticResource Text.ResultPrimary}"/>
-                                    <TextBlock Text="{Binding AllocatedBytes, StringFormat=Memory: {0} bytes}"
-                                               Style="{StaticResource Text.ResultSecondary}"
-                                               Margin="0,4,0,0"/>
-                                </StackPanel>
+                                <TextBlock Grid.Column="0"
+                                           Text="{Binding MethodName}"
+                                           Style="{StaticResource Text.ResultPrimary}"/>
 
                                 <TextBlock Grid.Column="1"
                                            Text="{Binding DisplayTime}"
@@ -77,58 +67,12 @@
                 </ListBox>
             </GroupBox>
 
-            <!-- Memory leaderboard -->
-            <GroupBox Grid.Row="1"
-                      Grid.Column="0"
-                      Header="Memory Leaderboard"
-                      Margin="6">
-                <ListBox x:Name="MemoryResultsListBox"
-                         Style="{StaticResource ListBox.Sonar}"
-                         ItemContainerStyle="{StaticResource ListBoxItem.Sonar}">
-                    <ListBox.ItemTemplate>
-                        <DataTemplate>
-                            <Grid>
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="*" />
-                                    <ColumnDefinition Width="Auto" />
-                                </Grid.ColumnDefinitions>
-
-                                <StackPanel Grid.Column="0">
-                                    <TextBlock Text="{Binding MethodName}"
-                                               Style="{StaticResource Text.ResultPrimary}"/>
-                                    <TextBlock Text="{Binding ElapsedMilliseconds, StringFormat=Time: {0:F2} ms}"
-                                               Style="{StaticResource Text.ResultSecondary}"
-                                               Margin="0,4,0,0"/>
-                                </StackPanel>
-
-                                <TextBlock Grid.Column="1"
-                                           Text="{Binding AllocatedBytes, StringFormat={}{0} bytes}"
-                                           Style="{StaticResource Text.ResultPrimary}"
-                                           VerticalAlignment="Center"
-                                           Margin="12,0,0,0"/>
-                            </Grid>
-                        </DataTemplate>
-                    </ListBox.ItemTemplate>
-                </ListBox>
-            </GroupBox>
-
             <!-- Time graph -->
-            <GroupBox Grid.Row="0"
-                      Grid.Column="1"
+            <GroupBox Grid.Column="1"
                       Header="Time Graph"
                       Margin="6">
                 <Grid Margin="4">
                     <ScottPlot:WpfPlot x:Name="PlotTop"/>
-                </Grid>
-            </GroupBox>
-
-            <!-- Memory graph -->
-            <GroupBox Grid.Row="1"
-                      Grid.Column="1"
-                      Header="Memory Graph"
-                      Margin="6">
-                <Grid Margin="4">
-                    <ScottPlot:WpfPlot x:Name="PlotBottom"/>
                 </Grid>
             </GroupBox>
         </Grid>

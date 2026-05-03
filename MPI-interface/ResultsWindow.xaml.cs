@@ -43,15 +43,11 @@ public partial class ResultsWindow : Window
         TimeResultsListBox.ItemsSource = _results
             .OrderBy(x => x.ElapsedMilliseconds)
             .ToList();
-
-        MemoryResultsListBox.ItemsSource = _results
-            .OrderBy(x => x.AllocatedBytes)
-            .ToList();
     }
+
     private void BuildPlots()
     {
         BuildTimePlot();
-        BuildMemoryPlot();
     }
 
     private void BuildTimePlot()
@@ -75,29 +71,6 @@ public partial class ResultsWindow : Window
             new ScottPlot.TickGenerators.NumericManual(positions, labels);
 
         PlotTop.Refresh();
-    }
-
-    private void BuildMemoryPlot()
-    {
-        if (_results.Count == 0)
-            return;
-
-        double[] positions = Enumerable.Range(0, _results.Count).Select(x => (double)x).ToArray();
-        double[] values = _results.Select(x => (double)x.AllocatedBytes).ToArray();
-        string[] labels = _results.Select(x => x.MethodName.Replace("Sort", "")).ToArray();
-
-        PlotBottom.Plot.Clear();
-        ConfigurePlotAppearance(PlotBottom, "Managed Memory Usage", "bytes");
-
-        PlotBottom.Plot.Axes.SetLimits(left: -0.5, right: _results.Count - 0.5, bottom: 0, top: values.Max() + 10);
-
-        var bars = PlotBottom.Plot.Add.Bars(positions, values);
-        bars.ValueLabelStyle.IsVisible = true;
-
-        PlotBottom.Plot.Axes.Bottom.TickGenerator =
-            new ScottPlot.TickGenerators.NumericManual(positions, labels);
-
-        PlotBottom.Refresh();
     }
 
     private static void ConfigurePlotAppearance(ScottPlot.WPF.WpfPlot plot, string title, string yLabel)

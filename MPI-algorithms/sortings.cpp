@@ -1,8 +1,9 @@
-#include "pch.h" ;
-#include "sortings.h";
+#include "pch.h"
+#include "sortings.h"
 #include <cstdint>
 #include <cstdlib>
 #include <ctime>
+#include <vector>
 
 static void swap_int(int32_t& a, int32_t& b)
 {
@@ -33,20 +34,48 @@ static int partition_qs(int32_t* arr, int left, int right)
     return i + 1;
 }
 
-static void quick_sort_impl(int32_t* arr, int left, int right)
-{
-    if (left < right)
-    {
-        int pivotIndex = partition_qs(arr, left, right);
-        quick_sort_impl(arr, left, pivotIndex - 1);
-        quick_sort_impl(arr, pivotIndex + 1, right);
-    }
-}
-
 void quick_sort(int32_t* arr, int32_t len)
 {
     if (!arr || len <= 1) return;
-    quick_sort_impl(arr, 0, len - 1);
+
+    // Iterative quicksort: Lomuto + last-element pivot is worst-case O(n) recursion depth
+    // on reversed/sorted input and blows the native stack (~10k frames). Explicit stack is safe.
+    std::vector<std::pair<int, int>> st;
+    st.reserve(64);
+    st.emplace_back(0, static_cast<int>(len - 1));
+
+    while (!st.empty())
+    {
+        auto [left, right] = st.back();
+        st.pop_back();
+
+        if (left >= right)
+            continue;
+
+        int pivotIndex = partition_qs(arr, left, right);
+
+        const int lowHi = pivotIndex - 1;
+        const int highLo = pivotIndex + 1;
+
+        // Push larger subrange first so the smaller one is expanded next (shallower explicit stack).
+        int lowLen = lowHi - left + 1;
+        int highLen = right - highLo + 1;
+
+        if (lowLen > highLen)
+        {
+            if (highLo <= right)
+                st.emplace_back(highLo, right);
+            if (left <= lowHi)
+                st.emplace_back(left, lowHi);
+        }
+        else
+        {
+            if (left <= lowHi)
+                st.emplace_back(left, lowHi);
+            if (highLo <= right)
+                st.emplace_back(highLo, right);
+        }
+    }
 }
 
 /* =========================

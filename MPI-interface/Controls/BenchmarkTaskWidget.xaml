@@ -1,4 +1,4 @@
-﻿<UserControl x:Class="MPI_interface.Controls.BenchmarkTaskWidget"
+<UserControl x:Class="MPI_interface.Controls.BenchmarkTaskWidget"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              x:Name="Root">
@@ -48,7 +48,7 @@
             <StackPanel Grid.Column="1"
                         VerticalAlignment="Center">
                 <Button Content="Open Results"
-                        Style="{StaticResource Button.Light}"
+                        Style="{StaticResource Button.Accent}"
                         MinWidth="140"
                         Height="44"
                         Click="OpenResults_Click"

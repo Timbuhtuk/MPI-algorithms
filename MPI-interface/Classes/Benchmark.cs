@@ -18,17 +18,9 @@ public static class Benchmark
         GC.WaitForPendingFinalizers();
         GC.Collect();
 
-        long memoryBefore = GC.GetAllocatedBytesForCurrentThread();
-
         Stopwatch stopwatch = Stopwatch.StartNew();
         method(workingArray);
         stopwatch.Stop();
-
-        long memoryAfter = GC.GetAllocatedBytesForCurrentThread();
-
-        long managedAllocated = memoryAfter - memoryBefore;
-
-        long arraySize = workingArray.Length * sizeof(int);
 
         return new BenchmarkResult
         {
@@ -36,7 +28,6 @@ public static class Benchmark
             ArrayLength = workingArray.Length,
             ElapsedTicks = stopwatch.ElapsedTicks,
             ElapsedMilliseconds = stopwatch.Elapsed.TotalMilliseconds,
-            AllocatedBytes = managedAllocated //+ arraySize
         };
     }
 }

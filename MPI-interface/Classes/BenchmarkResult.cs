@@ -6,7 +6,6 @@
         public int ArrayLength { get; init; }
         public long ElapsedTicks { get; init; }
         public double ElapsedMilliseconds { get; init; }
-        public long AllocatedBytes { get; init; }
         public string DisplayTime
         {
             get
@@ -26,8 +25,7 @@
             return $"{MethodName}: " +
                    $"Length={ArrayLength}, " +
                    $"Time={ElapsedMilliseconds:F4} ms, " +
-                   $"Ticks={ElapsedTicks}, " +
-                   $"Allocated={AllocatedBytes} bytes";
+                   $"Ticks={ElapsedTicks}";
         }
     }
 }

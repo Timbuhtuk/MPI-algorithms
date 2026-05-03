@@ -1,0 +1,113 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <!-- Light app palette — same keys as Theme.Dark.xaml. Merge this instead of Theme.Dark to switch theme. -->
+
+    <Color x:Key="Color.Background.App">#F2F2F7</Color>
+    <Color x:Key="Color.Background.Body">#FFFFFF</Color>
+    <Color x:Key="Color.Background.Page">#E5E5EA</Color>
+    <Color x:Key="Color.Background.Modal">#FFFFFF</Color>
+
+    <Color x:Key="Color.Text.Primary">#1C1C1E</Color>
+    <Color x:Key="Color.Text.Secondary">#3A3A3C</Color>
+    <Color x:Key="Color.Text.Subtle">#993A3A3C</Color>
+    <Color x:Key="Color.Text.Subtitle">#8E8E93</Color>
+    <Color x:Key="Color.Text.Dark">#1F1F1F</Color>
+
+    <Color x:Key="Color.Accent.Error">#D70015</Color>
+    <Color x:Key="Color.Accent.ErrorFocus">#FF3B30</Color>
+    <Color x:Key="Color.Accent.LinkHover">#0077ED</Color>
+    <Color x:Key="Color.Accent.LinkActive">#0058B0</Color>
+    <Color x:Key="Color.Accent.Like">#FF2D55</Color>
+    <Color x:Key="Color.Accent.LikeHover">#D81F45</Color>
+    <Color x:Key="Color.Accent.Success">#34C759</Color>
+
+    <Color x:Key="Color.Button.Accent.Background">#FFFFFF</Color>
+    <Color x:Key="Color.Button.Accent.BackgroundPressed">#E5E5EA</Color>
+    <Color x:Key="Color.Button.Accent.Foreground">#1C1C1E</Color>
+    <Color x:Key="Color.Button.Accent.ForegroundHover">#3A3A3C</Color>
+    <Color x:Key="Color.Button.Accent.SelectedBackground">#D1D1D6</Color>
+    <Color x:Key="Color.Button.Accent.SelectedHover">#C7C7CC</Color>
+    <Color x:Key="Color.Button.Accent.SelectedPressed">#AEAEB2</Color>
+
+    <Color x:Key="Color.Button.Muted.Background">#3A3A3C</Color>
+    <Color x:Key="Color.Button.Muted.BackgroundPressed">#48484A</Color>
+    <Color x:Key="Color.Button.Muted.Foreground">#FFFFFF</Color>
+    <Color x:Key="Color.Button.Muted.ForegroundHover">#E5E5EA</Color>
+    <Color x:Key="Color.Button.Muted.SelectedBackground">#636366</Color>
+    <Color x:Key="Color.Button.Muted.SelectedHover">#787880</Color>
+    <Color x:Key="Color.Button.Muted.SelectedPressed">#8E8E93</Color>
+    <Color x:Key="Color.Button.Disabled.Background">#C7C7CC</Color>
+    <Color x:Key="Color.Button.Disabled.Foreground">#8E8E93</Color>
+
+    <Color x:Key="Color.Input.Background">#FFFFFF</Color>
+    <Color x:Key="Color.Input.Foreground">#1C1C1E</Color>
+    <Color x:Key="Color.Input.Label">#993A3A3C</Color>
+    <Color x:Key="Color.Input.Placeholder">#8E8E93</Color>
+    <Color x:Key="Color.Input.Border">#C6C6C8</Color>
+    <Color x:Key="Color.Input.BorderFocus">#007AFF</Color>
+    <Color x:Key="Color.Input.DisabledBackground">#F2F2F7</Color>
+    <Color x:Key="Color.Input.DisabledForeground">#C7C7CC</Color>
+    <Color x:Key="Color.Input.DisabledPlaceholder">#AEAEB2</Color>
+
+    <Color x:Key="Color.Card.Background">#26000000</Color>
+    <Color x:Key="Color.Card.Placeholder">#40000000</Color>
+    <Color x:Key="Color.TabBar.Background">#E5E5EA</Color>
+    <Color x:Key="Color.TabBar.ActiveBackground">#FFFFFF</Color>
+    <Color x:Key="Color.TabBar.HoverBackground">#33000000</Color>
+    <Color x:Key="Color.TabBar.ActiveHoverBackground">#F2F2F7</Color>
+    <Color x:Key="Color.Backdrop">#66000000</Color>
+
+    <Color x:Key="Color.Folder.Layer1">#8E8E93</Color>
+    <Color x:Key="Color.Folder.Layer2">#AEAEB2</Color>
+    <Color x:Key="Color.Folder.Layer3">#D1D1D6</Color>
+
+    <SolidColorBrush x:Key="Brush.Background.App" Color="{StaticResource Color.Background.App}" />
+    <SolidColorBrush x:Key="Brush.Background.Body" Color="{StaticResource Color.Background.Body}" />
+    <SolidColorBrush x:Key="Brush.Background.Page" Color="{StaticResource Color.Background.Page}" />
+    <SolidColorBrush x:Key="Brush.Background.Modal" Color="{StaticResource Color.Background.Modal}" />
+
+    <SolidColorBrush x:Key="Brush.Text.Primary" Color="{StaticResource Color.Text.Primary}" />
+    <SolidColorBrush x:Key="Brush.Text.Secondary" Color="{StaticResource Color.Text.Secondary}" />
+    <SolidColorBrush x:Key="Brush.Text.Subtle" Color="{StaticResource Color.Text.Subtle}" />
+    <SolidColorBrush x:Key="Brush.Text.Subtitle" Color="{StaticResource Color.Text.Subtitle}" />
+    <SolidColorBrush x:Key="Brush.Text.Dark" Color="{StaticResource Color.Text.Dark}" />
+
+    <SolidColorBrush x:Key="Brush.Accent.Error" Color="{StaticResource Color.Accent.Error}" />
+    <SolidColorBrush x:Key="Brush.Accent.Success" Color="{StaticResource Color.Accent.Success}" />
+    <SolidColorBrush x:Key="Brush.Backdrop" Color="{StaticResource Color.Backdrop}" />
+
+    <SolidColorBrush x:Key="Brush.Button.Accent.Background" Color="{StaticResource Color.Button.Accent.Background}" />
+    <SolidColorBrush x:Key="Brush.Button.Accent.BackgroundPressed" Color="{StaticResource Color.Button.Accent.BackgroundPressed}" />
+    <SolidColorBrush x:Key="Brush.Button.Accent.Foreground" Color="{StaticResource Color.Button.Accent.Foreground}" />
+    <SolidColorBrush x:Key="Brush.Button.Accent.ForegroundHover" Color="{StaticResource Color.Button.Accent.ForegroundHover}" />
+    <SolidColorBrush x:Key="Brush.Button.Accent.SelectedBackground" Color="{StaticResource Color.Button.Accent.SelectedBackground}" />
+
+    <SolidColorBrush x:Key="Brush.Button.Muted.Background" Color="{StaticResource Color.Button.Muted.Background}" />
+    <SolidColorBrush x:Key="Brush.Button.Muted.BackgroundPressed" Color="{StaticResource Color.Button.Muted.BackgroundPressed}" />
+    <SolidColorBrush x:Key="Brush.Button.Muted.Foreground" Color="{StaticResource Color.Button.Muted.Foreground}" />
+    <SolidColorBrush x:Key="Brush.Button.Muted.ForegroundHover" Color="{StaticResource Color.Button.Muted.ForegroundHover}" />
+    <SolidColorBrush x:Key="Brush.Button.Muted.SelectedBackground" Color="{StaticResource Color.Button.Muted.SelectedBackground}" />
+
+    <SolidColorBrush x:Key="Brush.Button.Disabled.Background" Color="{StaticResource Color.Button.Disabled.Background}" />
+    <SolidColorBrush x:Key="Brush.Button.Disabled.Foreground" Color="{StaticResource Color.Button.Disabled.Foreground}" />
+
+    <SolidColorBrush x:Key="Brush.Input.Background" Color="{StaticResource Color.Input.Background}" />
+    <SolidColorBrush x:Key="Brush.Input.Foreground" Color="{StaticResource Color.Input.Foreground}" />
+    <SolidColorBrush x:Key="Brush.Input.Border" Color="{StaticResource Color.Input.Border}" />
+    <SolidColorBrush x:Key="Brush.Input.BorderFocus" Color="{StaticResource Color.Input.BorderFocus}" />
+    <SolidColorBrush x:Key="Brush.Input.DisabledBackground" Color="{StaticResource Color.Input.DisabledBackground}" />
+    <SolidColorBrush x:Key="Brush.Input.DisabledForeground" Color="{StaticResource Color.Input.DisabledForeground}" />
+    <SolidColorBrush x:Key="Brush.Input.Label" Color="{StaticResource Color.Input.Label}" />
+    <SolidColorBrush x:Key="Brush.Input.Placeholder" Color="{StaticResource Color.Input.Placeholder}" />
+
+    <SolidColorBrush x:Key="Brush.TabBar.Background" Color="{StaticResource Color.TabBar.Background}" />
+    <SolidColorBrush x:Key="Brush.TabBar.ActiveBackground" Color="{StaticResource Color.TabBar.ActiveBackground}" />
+    <SolidColorBrush x:Key="Brush.TabBar.HoverBackground" Color="{StaticResource Color.TabBar.HoverBackground}" />
+    <SolidColorBrush x:Key="Brush.TabBar.ActiveHoverBackground" Color="{StaticResource Color.TabBar.ActiveHoverBackground}" />
+
+    <SolidColorBrush x:Key="Brush.Folder.Layer1" Color="{StaticResource Color.Folder.Layer1}" />
+    <SolidColorBrush x:Key="Brush.Folder.Layer2" Color="{StaticResource Color.Folder.Layer2}" />
+    <SolidColorBrush x:Key="Brush.Folder.Layer3" Color="{StaticResource Color.Folder.Layer3}" />
+
+</ResourceDictionary>
